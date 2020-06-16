@@ -12,4 +12,4 @@ class PageContainer:
         self.logger = logging.getLogger("PAGE NAME")
         self.tests_logger = logging.getLogger("TEST NAME")
         self.common = CommonPage(self.logger, browser)
-        self.login = LoginPage(self.logger, browser, self.common)
+        self.login = LoginPage(self.logger, browser)

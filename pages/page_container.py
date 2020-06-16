@@ -2,7 +2,7 @@
 
 import logging
 from pages.login_page import LoginPage
-from pages.common import CommonItems
+from pages.common_page import CommonPage
 
 
 class PageContainer:
@@ -11,5 +11,5 @@ class PageContainer:
     def __init__(self, browser):
         self.logger = logging.getLogger("PAGE NAME")
         self.tests_logger = logging.getLogger("TEST NAME")
-        self.common = CommonItems(self.logger, browser)
+        self.common = CommonPage(self.logger, browser)
         self.login = LoginPage(self.logger, browser, self.common)

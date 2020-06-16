@@ -2,15 +2,15 @@
 
 import allure
 from selenium.webdriver.common.by import By
-from pages.common import CommonItems
+from pages.common_page import CommonPage
 
 
-class LoginPage(CommonItems):
+class LoginPage(CommonPage):
     """Методы и локаторы страницы LoginPage"""
 
-    def __init__(self, logger, browser, common_items):
+    def __init__(self, logger, browser, common_page):
         super().__init__(logger, browser)
-        self.common_items = common_items
+        self.common_page = common_page
 
     login = 'ticketland.QA@yandex.ru'
     password = '123456'

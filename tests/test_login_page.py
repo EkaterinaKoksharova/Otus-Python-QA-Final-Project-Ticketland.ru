@@ -2,8 +2,7 @@
 
 import allure
 import pytest
-from selenium.webdriver.common.by import By
-from pages.page_container import PageContainer
+from tools.page_container import PageContainer
 
 
 class TestLoginPage:

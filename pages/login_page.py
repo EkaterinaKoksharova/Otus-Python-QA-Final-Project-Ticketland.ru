@@ -22,7 +22,7 @@ class LoginPage(CommonPage):
     mailru_login = (By.CSS_SELECTOR, '.auth-link.mailru')
     google_login = (By.CSS_SELECTOR, '.auth-link.google_oauth')
     facebook_login = (By.CSS_SELECTOR, '.auth-link.facebook')
-    vk_login = (By.CSS_SELECTOR, '.auth-link.vkontakte')
+    vk_login = (By.CSS_SELECTOR, '.auth-link.kontakte')
 
     def go_to_login_page(self):
         """ Метод перехода на страницу авторизации"""

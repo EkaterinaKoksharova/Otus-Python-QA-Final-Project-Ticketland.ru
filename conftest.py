@@ -75,7 +75,7 @@ def browser(request):
     driver = None
     if browser_name == "chrome":
         options = webdriver.ChromeOptions()
-        options.add_argument("headless")
+        # options.add_argument("headless")
         options.add_argument("--window-size=1920x1080")
         options.add_experimental_option('w3c', False)
         DesiredCapabilities.CHROME['loggingPrefs'] = {'browser': 'ALL', 'driver': 'ALL'}

@@ -1,4 +1,5 @@
 pipeline {
+    agent {label 'slave'}
     stages {
         stage ('Running autotests') {
             steps {

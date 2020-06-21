@@ -21,9 +21,12 @@ class CommonPage:
     def wait_element_present(self, locator):
         """ Метод ожидания появления элемента """
 
-        with allure.step ("Ожидание появления элемента" + str(locator)):
+        with allure.step("Ожидание появления элемента" + str(locator)):
+
+            wait = WebDriverWait(self.browser, 6)
+
             try:
-                return WebDriverWait(self.browser, 6).until(ec.presence_of_all_elements_located(locator))
+                return wait.until(ec.presence_of_all_elements_located(locator))
             except Exception as exc:
                 exc.msg = 'Unable to locate element by selector ' + str(locator)
                 raise

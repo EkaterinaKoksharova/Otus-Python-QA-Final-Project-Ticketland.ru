@@ -14,8 +14,11 @@ class SearchPage(CommonPage):
     def search(self):
         """ Метод поиска на сайта ticketlane.ru """
 
-        self.browser.find_element(self.login_icon).click()
+        with allure.step("Выполнение поиска"):
+            self.browser.find_element(self.login_icon).click()
 
     def enter_search_phrase(self, phrase):
+        """ Метод ввода фразы для поиска """
 
-        self.browser.find_element(self.search_input).send_keys(phrase)
+        with allure.step("Ввод фразы для поиска:" + phrase):
+            self.browser.find_element(self.search_input).send_keys(phrase)

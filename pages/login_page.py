@@ -22,12 +22,12 @@ class LoginPage(CommonPage):
     mailru_login = (By.CSS_SELECTOR, '.auth-link.mailru')
     google_login = (By.CSS_SELECTOR, '.auth-link.google_oauth')
     facebook_login = (By.CSS_SELECTOR, '.auth-link.facebook')
-    vk_login = (By.CSS_SELECTOR, '.auth-link.kontakte')
+    vk_login = (By.CSS_SELECTOR, '.auth-link.vkontakte')
 
     def go_to_login_page(self):
         """ Метод перехода на страницу авторизации"""
 
-        with allure.step ("Переход на страницу aвторизации"):
+        with allure.step("Переход на страницу aвторизации"):
             self.browser.get(self.base_url + "/login/")
 
     def login_to_site(self, login=login, password=password):

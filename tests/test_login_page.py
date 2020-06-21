@@ -11,8 +11,8 @@ class TestLoginPage:
     page = PageContainer(browser=None)
     admin_wrong_pasword = "blabla"
 
-    @allure.testcase (page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
-    @allure.title ("Проверка наличия основных элементов на странице авторизации")
+    @allure.testcase(page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
+    @allure.title("Проверка наличия основных элементов на странице авторизации")
     def test_login_page_find_elements(self, browser):
         """ Проверка наличия основных элементов на странице авторизации """
 
@@ -31,12 +31,12 @@ class TestLoginPage:
         assert browser.find_element(*page.login.facebook_login).is_displayed()
         assert browser.find_element(*page.login.vk_login).is_displayed()
 
-    @allure.testcase (page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
-    @allure.title ("Проверка корректной авторизации пользователя")
+    @allure.testcase(page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
+    @allure.title("Проверка корректной авторизации пользователя")
     def test_login_right(self, browser):
         """ Проверка корректной авторизации пользователя """
 
-        page = PageContainer (browser)
+        page = PageContainer(browser)
         page.tests_logger.info('test_login_right')
 
         page.login.go_to_login_page()
@@ -47,8 +47,8 @@ class TestLoginPage:
 
         assert 'private' in browser.current_url, 'Ошибка авторизации!'
 
-    @allure.testcase (page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
-    @allure.title ("Проверка ошибки авторизации пользователя")
+    @allure.testcase(page.common.test_case_url + 'test_case_id', 'Наименование тест-кейса')
+    @allure.title("Проверка ошибки авторизации пользователя")
     @pytest.mark.parametrize('login', [' ', '@mail.ru', 'koksharova3093@gmailcom'])
     def test_login_wrong(self, browser, login):
         """ Проверка ошибки авторизации пользователя """

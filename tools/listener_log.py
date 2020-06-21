@@ -1,7 +1,7 @@
 """  Настройки для сбора логов браузера """
 
 import logging
-from selenium.webdriver.support.events import EventFiringWebDriver, AbstractEventListener
+from selenium.webdriver.support.events import AbstractEventListener
 
 
 class LogListener(AbstractEventListener):

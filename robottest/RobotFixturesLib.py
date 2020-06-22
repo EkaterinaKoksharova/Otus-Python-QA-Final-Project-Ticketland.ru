@@ -5,7 +5,7 @@ from selenium import webdriver
 from tools.listener_log import LogListener
 
 
-def browser():
+def chrome():
     """ Драйвер для запуска тестов> """
 
     options = webdriver.ChromeOptions()
@@ -15,11 +15,11 @@ def browser():
     options.add_argument("--window-size=1920x1080")
     driver = webdriver.Chrome(options=options)
 
-    yield driver
+    return driver
     driver.quit()
 
 
-def logger():
+def chrome_logger():
     """ Логгер браузера """
 
     log = logging.logging.getLogger("TEST NAME")

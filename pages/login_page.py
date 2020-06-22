@@ -3,10 +3,14 @@
 import allure
 from selenium.webdriver.common.by import By
 from pages.common_page import CommonPage
+from robot.api.deco import keyword, library
 
 
+@library(scope='GLOBAL')
 class LoginPage(CommonPage):
     """Методы и локаторы страницы LoginPage"""
+
+    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
 
     login = 'koksharova3093@gmail.com'
     password = '999999'
@@ -24,12 +28,14 @@ class LoginPage(CommonPage):
     facebook_login = (By.CSS_SELECTOR, '.auth-link.facebook')
     vk_login = (By.CSS_SELECTOR, '.auth-link.vkontakte')
 
+    @keyword('Go_D_login_page')
     def go_to_login_page(self):
         """ Метод перехода на страницу авторизации"""
 
         with allure.step("Переход на страницу aвторизации"):
             self.browser.get(self.base_url + "/login/")
 
+    @keyword('Login to site')
     def login_to_site(self, login=login, password=password):
         """ Метод авторизации пользователя на сайте ticketland.ru """
 

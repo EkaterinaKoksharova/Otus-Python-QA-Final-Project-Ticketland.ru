@@ -1,57 +1,32 @@
-"""  Фикстуры robotframework тестов сайта ticketland.ru """
+*** Settings ***
+Documentation  Suite description
+Library     Selenium2Library
 
-import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from robot.api.deco import keyword
+*** Variables ***
 
+${BROWSER}  chrome
+${LoginUrl}   https://www.ticketland.ru/login/
+${AccountUrl}   https://www.ticketland.ru/private/
+${login_input}=     name:LoginForm[contact]
+${password_input}=      name:LoginForm[password]
+${login_button}=    css:.registration-button
+${logout_button}=   css:#tab_logout b
 
-login = 'koksharova3093@gmail.com'
-password = '999999'
+*** Keywords ***
 
-# login_input = (By.NAME, 'LoginForm[contact]')
-password_input = (By.NAME, 'LoginForm[password]')
+Open ticketland login page
+    Open browser    ${LoginUrl}      browser=${BROWSER}
 
-@keyword('Login input')
-def get_login_input():
-    login_input = (By.NAME, 'LoginForm[contact]')
-    return login_input
+Enter credentials
+    [Arguments]     ${element}  ${login}
+    Input text      ${element}  ${login}
 
+Click login button
+    Click button    ${login_button}
 
-@keyword('Chrome browser')
-def chromedriver():
-    """ Драйвер для запуска тестов> """
+Wait logout button is visible
+    Wait Until Element Is Visible   ${logout_button}
 
-    options = webdriver.ChromeOptions()
-    # options.add_argument("headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920x1080")
-    driver = webdriver.Chrome(options=options)
-
-    return driver
-
-
-@keyword('Open site')
-def chrome_get(url):
-
-    chrome = chromedriver()
-    chrome.get(url)
-    time.sleep(3)
-    chrome.quit()
-
-
-@keyword('Send keys to')
-def chrome_send_keys(input, value):
-    """ Логгер браузера """
-    chrome = chromedriver()
-    chrome.get('http://www.ticketland.ru/login')
-    chrome.find_element(input).send_keys(value)
-    time.sleep(30)
-
-
-@keyword ('Click on')
-def chrome_click(element):
-    """ Логгер браузера """
-    chrome = chromedriver ()
-    chrome.find_element(element).click()
+Assert curent url
+    [Arguments]     ${Url}
+    Location should be      ${Url}

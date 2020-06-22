@@ -131,4 +131,4 @@ tests/.pytest_cache
 /log.html
 /output.xml
 /report.html
-.idea/
+.idea

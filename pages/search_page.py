@@ -8,17 +8,18 @@ from pages.common_page import CommonPage
 class SearchPage(CommonPage):
     """Методы и локаторы страницы SearchPage и элементов, относящихся к поиску"""
 
-    search_button = (By.CSS_SELECTOR, ".find_button btn3")
+    search_button = (By.CSS_SELECTOR, ".find_button .btn3")
     search_input = (By.CSS_SELECTOR, "#searchForm .old-input")
+    search_page_title = (By.CSS_SELECTOR, ".mainBlockLeft--search")
 
-    def search(self):
+    def make_search(self):
         """ Метод поиска на сайта ticketlane.ru """
 
         with allure.step("Выполнение поиска"):
-            self.browser.find_element(self.login_icon).click()
+            self.browser.find_element(*self.search_button).click()
 
     def enter_search_phrase(self, phrase):
         """ Метод ввода фразы для поиска """
 
         with allure.step("Ввод фразы для поиска:" + phrase):
-            self.browser.find_element(self.search_input).send_keys(phrase)
+            self.browser.find_element(*self.search_input).send_keys(phrase)

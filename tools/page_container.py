@@ -5,6 +5,7 @@ from pages.common_page import CommonPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.private_page import PrivatePage
+from pages.search_page import SearchPage
 
 
 class PageContainer:
@@ -17,3 +18,4 @@ class PageContainer:
         self.login = LoginPage(self.logger, browser)
         self.main = MainPage(self.logger, browser)
         self.private = PrivatePage(self.logger, browser)
+        self.search = SearchPage(self.logger, browser)

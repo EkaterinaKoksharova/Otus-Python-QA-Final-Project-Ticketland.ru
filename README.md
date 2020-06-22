@@ -2,22 +2,26 @@
 
 Финальный проект курса Otus Python QA Engineer
 
-1. Подготовка к запуску:
+**1. Подготовка к запуску:**
 
 - Установить chromedriver (https://chromedriver.chromium.org)
 - Установить необходимые библиотеки (pip3 install -r requirements.txt)
 
-2. Запуск тестов (pytest)
+**2. Запуск тестов (pytest)**
 
 - Все тесты (pytest -v tests/)
 - Один тест или файл с тестами (pytest -v tests/ -k test_file_name.py)
 
-3. Сбор и просмотр отчета allure:
+**3. Запуск тестов (robot)**
+
+- Команда в терминале (robot robottest/)
+
+**4. Сбор и просмотр отчета allure:**
 
 - При запуске тестов передать параметр --alluredir=Logs/allure-report
 - После прогона тестов выполнить команду (allure serve allure-report)
 
-4. Прогон pipeline в Jenkins:
+**5. Прогон pipeline в Jenkins:**
 
 - Создаем в любой директории (не в проекте) JenkinsDockerfile:
 ```buildoutcfg
@@ -41,12 +45,12 @@ RUN apt-get update -qq \
 - Открываем jenkins (http://localhost:8080)
 - Создаем pipeline, передаем Jenkinsfile
 
-4. Запуск тестов в docker:
+**5. Запуск тестов в docker:**
 
 -  В папке с файлом Dockerfile создаем image c тестами (docker build -t  ticketland_tests -f .)
 -  Запускаем тесты в docker (docker run -it ticketland_tests)
 
-5. Как запустить тесты в разных браузерах:
+**6. Как запустить тесты в разных браузерах:**
 
 Chrome:
 pytest -v --browser_name=chrome tests
@@ -54,6 +58,6 @@ pytest -v --browser_name=chrome tests
 FireFox:
 pytest -v --browser_name=firefox tests
 
-6. Настройки логгирования:
+**7. Настройки логгирования:**
 pytest -v --log_file=logs/filename, где "filename" - наименование файла, куда запишутся логи
 pytest -v ---log_level=INFO, где "INFO" - тип логов, которые будут собраны

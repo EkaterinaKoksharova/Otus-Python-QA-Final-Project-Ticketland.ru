@@ -1,4 +1,4 @@
-""" Тесты для страницы личного кабинера на сайте ticketland.ru"""
+""" Тесты для страницы личного кабинета на сайте ticketland.ru"""
 
 import time
 import allure
@@ -7,7 +7,7 @@ from tools.page_container import PageContainer
 
 
 class TestPrivatePage:
-    """ Тесты для страницы авторизации на сайте """
+    """ Тесты для страницы личного кабинета на сайте ticketland.ru """
 
     page = PageContainer(browser=None)
 

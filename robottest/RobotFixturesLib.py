@@ -1,5 +1,6 @@
 """  Фикстуры robotframework тестов сайта ticketland.ru """
 
+import logging
 from selenium import webdriver
 from tools.listener_log import LogListener
 
@@ -16,3 +17,10 @@ def browser():
 
     yield driver
     driver.quit()
+
+
+def logger():
+    """ Логгер браузера """
+
+    log = logging.logging.getLogger("TEST NAME")
+    return log

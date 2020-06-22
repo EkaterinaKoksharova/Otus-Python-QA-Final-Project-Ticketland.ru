@@ -2,7 +2,7 @@
 
 import allure
 from selenium.webdriver.common.by import By
-from common_page import CommonPage
+from pages.common_page import CommonPage
 
 
 class LoginPage(CommonPage):

@@ -2,7 +2,7 @@
 
 import logging
 from pages.common_page import CommonPage
-from pages.LoginPage import LoginPage
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.private_page import PrivatePage
 

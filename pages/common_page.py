@@ -23,7 +23,7 @@ class CommonPage:
 
         with allure.step("Ожидание появления элемента" + str(locator)):
 
-            wait = WebDriverWait(self.browser, 6)
+            wait = WebDriverWait(self.browser, 10)
 
             try:
                 return wait.until(ec.presence_of_all_elements_located(locator))

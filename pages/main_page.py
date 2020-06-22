@@ -1,6 +1,5 @@
 """ Методы и локаторы страницы MainPage """
 
-import allure
 from selenium.webdriver.common.by import By
 from pages.common_page import CommonPage
 

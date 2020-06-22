@@ -17,7 +17,7 @@ class TestLoginPage:
         """ Проверка наличия основных элементов на странице авторизации """
 
         page = PageContainer(browser)
-        page.tests_logger.info('test_admin_login_page_find_elements')
+        page.tests_logger.info('test_login_page_find_elements')
 
         page.login.go_to_login_page()
 

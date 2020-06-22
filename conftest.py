@@ -13,7 +13,7 @@ def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome',
                      help="Choose browser: chrome or firefox")
     parser.addoption("--log_file",
-                     default='logs/browser_log',
+                     default=None,
                      help="This is a file adress, where selenium logs will be")
     parser.addoption("--log_level",
                      default="INFO",

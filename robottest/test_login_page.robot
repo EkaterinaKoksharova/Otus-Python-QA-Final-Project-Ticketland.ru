@@ -1,7 +1,8 @@
 *** Settings ***
 Documentation   Suite description
 
-Library     pages.login_page.py
+Library     RobotFixturesLib.py
+Library     ../pages/LoginPage.py   browser     browser
 Library     Selenium2Library
 Library     RequestsLibrary
 
@@ -12,4 +13,4 @@ ${BaseUrl}   http://www.ticketland.ru
 
 *** Test Cases ***
 Test Open Site
-    Go to login page
+    go to login page

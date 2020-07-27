@@ -10,6 +10,9 @@ pipeline {
         stage ('Python version') {
             steps {sh 'python3 -v'}
         }
+        stage ('Install pip3') {
+            steps {sh 'apt-get install python3-pip -y'}
+        }
         stage ('Install requirements') {
             steps {sh 'pip3 install -r requirements.txt'}
         }

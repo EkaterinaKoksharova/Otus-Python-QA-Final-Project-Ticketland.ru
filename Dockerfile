@@ -9,9 +9,9 @@ WORKDIR /tmp/ticketland
 COPY . .
 
 #RUN apt-get update -y
-RUN apt-get install python3.7 -y
-RUN apt-get install python3-pip -y
-RUN apt-get install -y wget xvfb unzip
+#RUN apt-get install python3.7 -y
+#RUN apt-get install python3-pip -y
+#RUN apt-get install -y wget xvfb unzip
 
 ## We need wget to set up the PPA and xvfb to have a virtual screen and unzip to install the Chromedriver
 #RUN apt-get install -y --no-install-recommends wget gnupg curl unzip

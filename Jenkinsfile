@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage ('Buildine image with tests') {
-            steps {sh 'docker build -t ticketland_test'}
+            steps {sh 'docker build -t ticketland_test .'}
         }
         stage ('Running autotests') {
             steps {sh 'docker run ticketland_test'}

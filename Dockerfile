@@ -42,4 +42,4 @@ ENV PATH $CHROMEDRIVER_DIR:$PATH
 
 RUN pip3 install -r requirements.txt
 
-CMD ["pytest", "tests/test_login_page.py"]
+RUN pytest -v tests/test_login_page.py --alluredir=logs/allure-report

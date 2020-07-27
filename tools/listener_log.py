@@ -26,6 +26,6 @@ class LogListener(AbstractEventListener):
     def after_quit(self, driver):
         logging.info('Driver quit')
 
-    # def on_exception(self, exception, driver):
-    #     logging.error('Exception: %s', exception)
-    #     driver.get_screenshot_as_file(f'logs/{exception}.png')
+    def on_exception(self, exception, driver):
+        logging.error('Exception: %s', exception)
+        driver.get_screenshot_as_file(f'logs/{exception}.png')

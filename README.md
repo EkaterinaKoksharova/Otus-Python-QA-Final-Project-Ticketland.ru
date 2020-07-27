@@ -18,7 +18,7 @@
 
 **4. Сбор и просмотр отчета allure:**
 
-- При запуске тестов передать параметр --alluredir=Logs/allure-report
+- При запуске тестов передать параметр --alluredir=logs/allure-report
 - После прогона тестов выполнить команду (allure serve allure-report)
 
 **5. Прогон pipeline в Jenkins:**

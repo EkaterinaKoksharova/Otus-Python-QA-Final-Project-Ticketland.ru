@@ -12,15 +12,16 @@ pipeline {
         }
         stage ('Running autotests') {
             steps {sh 'docker run ticketland_test'}
-        }
-        stage {
-            always {
-                script {
-                    allure ([
-                    includeProperties: false,
-                    jdk: '',
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'logs/allure-results']]])
+
+            post {
+                always {
+                    script {
+                        allure ([
+                        includeProperties: false,
+                        jdk: '',
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'logs/allure-results']]])
+                    }
                 }
             }
         }

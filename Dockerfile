@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome
+FROM python:3.6-stretch
 #FROM ubuntu
 
 #ENV TZ=Europe/Kiev

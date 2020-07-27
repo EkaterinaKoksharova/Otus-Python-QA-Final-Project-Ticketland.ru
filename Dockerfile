@@ -8,7 +8,7 @@ WORKDIR /tmp/ticketland
 
 COPY . .
 
-RUN apt-get update -y
+#RUN apt-get update -y
 RUN apt-get install python3.7 -y
 RUN apt-get install python3-pip -y
 RUN apt-get install -y wget xvfb unzip

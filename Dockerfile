@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM joyzoursky/python-chromedriver
 #FROM ubuntu
 
 #ENV TZ=Europe/Kiev

@@ -7,6 +7,9 @@ pipeline {
         timestamps()
     }
     stages {
+        stage ('Install python3') {
+            steps {sh 'apt-get install python3.7 -y'}
+        }
         stage ('Install requirements') {
             steps {sh 'pip3 install -r requirements.txt'}
         }

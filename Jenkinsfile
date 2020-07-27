@@ -11,7 +11,7 @@ pipeline {
             steps {sh 'docker build -t ticketland_test .'}
         }
         stage ('Running autotests') {
-            steps {sh 'docker run -v /Users/zsergey/PycharmProjects/Otus-Python-QA-Final-Project-Ticketland.ru/logs:/var/jenkins_home/workspace/TestOtus/logs/allure-report -t ticketland_test'}
+            steps {sh 'docker run ticketland_test'}
 
             post {
                 always {
@@ -21,7 +21,7 @@ pipeline {
                         jdk: '',
                         reportBuildPolicy: 'ALWAYS',
                         report: 'logs/allure-report',
-                        results: [[path: 'logs/allure-report']]])
+                        results: [[path: 'logs/allure-results']]])
                     }
                 }
             }

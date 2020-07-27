@@ -11,13 +11,13 @@ pipeline {
             steps {sh 'docker build -t ticketland_test_image .'}
         }
         stage ('Creating ticketland_test_container') {
-            steps {sh 'docker create --name ticketland_test_container ticketland_test_image'}
+            steps {sh 'docker create --name ticketland_test_container -v /logs/allure-log:/var/jenkins_home/workspace/TestOtus/logs/allure-report ticketland_test_image'}
         }
         stage ('Starting ticketland_test_container') {
             steps {sh 'docker start -a ticketland_test_container'}
         }
         stage ('Running autotests') {
-            steps {sh 'docker run -v /Users/zsergey/PycharmProjects/Otus-Python-QA-Final-Project-Ticketland.ru/logs/allure-log:/var/jenkins_home/workspace/TestOtus/logs/allure-report ticketland_test'}
+            steps {sh 'ls'}
 
             post {
                 always {
@@ -31,6 +31,9 @@ pipeline {
                     }
                 }
             }
+        }
+        stage ('checking allure-log dir') {
+            steps {sh 'ls && cd /logs/allure-log && ls'}
         }
     }
 }

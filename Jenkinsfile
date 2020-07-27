@@ -12,7 +12,8 @@ pipeline {
         }
         stage ('Running autotests') {
             steps {sh 'docker run ticketland_test'}
-
+        }
+        stage ('Building Allure report') {
             post {
                 always {
                     script {

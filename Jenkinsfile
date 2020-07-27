@@ -8,14 +8,10 @@ pipeline {
     }
     stages {
         stage ('Buildine image with tests') {
-            steps {
-                sh 'docker build -t ticketland_test'
-            }
+            steps {sh 'docker build -t ticketland_test'}
         }
         stage ('Running autotests') {
-            steps {
-                sh 'docker run ticketland_test'
-            }
+            steps {sh 'docker run ticketland_test'}
         }
         post {
             always {
@@ -26,6 +22,7 @@ pipeline {
                     reportBuildPolicy: 'ALWAYS',
                     results: [[path: 'logs/allure-results']]])
                 }
+            }
         }
     }
 }

@@ -29,14 +29,11 @@ pipeline {
                         includeProperties: false,
                         jdk: '',
                         reportBuildPolicy: 'ALWAYS',
-                        report: '/logs/allure-report',
-                        results: [[path: '/logs/allure-results']]])
+                        report: '/target/allure-report',
+                        results: [[path: '/target/allure-results']]])
                     }
                 }
             }
-        }
-        stage ('checking allure-log dir') {
-            steps {sh 'ls && cd /logs/allure-log && ls'}
         }
     }
 }

@@ -10,7 +10,7 @@ pipeline {
         stage ('Building ticketland_test_image') {
             steps {sh 'docker build -t ticketland_test_image .'}
         }
-        stage ('Building ticketland_test_image') {
+        stage ('Removing ticketland_test_container') {
             steps {sh 'docker rm ticketland_test_container'}
         }
         stage ('Creating ticketland_test_container') {

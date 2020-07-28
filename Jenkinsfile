@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Creating ticketland_test_container') {
             steps {sh 'docker create --name ticketland_test_container
-                      -v /logs/allure-log:/logs/allure-report
+                      -v /logs/allure-log:/logs/allure-results
                       ticketland_test_image'}
         }
         stage ('Starting ticketland_test_container') {

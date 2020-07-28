@@ -15,7 +15,7 @@ pipeline {
         }
         stage ('Creating ticketland_test_container') {
             steps {sh 'docker create --name ticketland_test_container
-                      -v /logs/allure-log:/var/jenkins_home/workspace/TestOtus/logs/allure-report
+                      -v /logs/allure-log:/logs/allure-report
                       ticketland_test_image'}
         }
         stage ('Starting ticketland_test_container') {
@@ -31,8 +31,8 @@ pipeline {
                         includeProperties: false,
                         jdk: '',
                         reportBuildPolicy: 'ALWAYS',
-                        report: '/tmp/ticketland/logs/allure-report',
-                        results: [[path: '/tmp/ticketland/logs/allure-results']]])
+                        report: '/logs/allure-report',
+                        results: [[path: '/logs/allure-results']]])
                     }
                 }
             }

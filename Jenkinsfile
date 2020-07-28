@@ -19,7 +19,7 @@ pipeline {
         stage ('Starting ticketland_test_container') {
             steps {sh 'docker start -a ticketland_test_container'}
         }
-        stage ('Running autotests') {
+        stage ('Collecting allure report') {
             steps {sh 'ls'}
 
             post {

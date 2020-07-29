@@ -21,18 +21,18 @@ pipeline {
         }
         stage ('Collecting allure report') {
             steps {sh 'ls'}
+        }
+    }
 
-            post {
-                always {
-                    script {
-                        allure ([
-                        includeProperties: false,
-                        jdk: '',
-                        reportBuildPolicy: 'ALWAYS',
-                        report: '/target/allure-report',
-                        results: [[path: '/target/allure-results']]])
-                    }
-                }
+    post {
+        always {
+            script {
+                allure ([
+                includeProperties: false,
+                jdk: '',
+                reportBuildPolicy: 'ALWAYS',
+                report: 'Otus-Python-QA-Final-Project-Ticketland.ru/allure-report',
+                results: [[path: 'Otus-Python-QA-Final-Project-Ticketland.ru/allure-results']]])
             }
         }
     }

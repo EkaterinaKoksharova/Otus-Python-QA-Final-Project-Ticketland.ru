@@ -11,7 +11,7 @@ pipeline {
             steps {sh 'pip3 install -r requirements.txt'}
         }
         stage ('Collecting allure report') {
-            steps {sh 'pytest -v tests/test_login_page.py --alluredir=logs/allure-log'}
+            steps {sh 'pytest -v tests/test_login_page.py --alluredir=/usr/local/jenkins/workspace/Otus-Python-QA-Final-Project-Ticketland.ru/target/allure-results'}
         }
     }
 

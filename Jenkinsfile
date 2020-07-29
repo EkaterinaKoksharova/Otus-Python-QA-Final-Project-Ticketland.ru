@@ -20,7 +20,7 @@ pipeline {
 //             steps {sh 'docker start -a ticketland_test_container'}
 //         }
         stage ('Install requirements') {
-            steps {sh 'pyton3 install -r requirements.txt'}
+            steps {sh 'pip install -r requirements.txt'}
         }
         stage ('Collecting allure report') {
             steps {sh 'pytest -v tests/test_login_page.py --alluredir=logs/allure-log'}

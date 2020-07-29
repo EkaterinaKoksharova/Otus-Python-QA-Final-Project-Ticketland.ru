@@ -7,18 +7,6 @@ pipeline {
         timestamps()
     }
     stages {
-//         stage ('Building ticketland_test_image') {
-//             steps {sh 'docker build -t ticketland_test_image .'}
-//         }
-//         stage ('Removing ticketland_test_container') {
-//             steps {sh 'docker rm ticketland_test_container'}
-//         }
-//         stage ('Creating ticketland_test_container') {
-//             steps {sh 'docker create --name ticketland_test_container -v /logs/allure-log:/logs/allure-results ticketland_test_image'}
-//         }
-//         stage ('Starting ticketland_test_container') {
-//             steps {sh 'docker start -a ticketland_test_container'}
-//         }
         stage ('Install requirements') {
             steps {sh 'pip3 install -r requirements.txt'}
         }
@@ -32,10 +20,10 @@ pipeline {
             script {
                 allure ([
                 includeProperties: false,
-                jdk: '',
+                jdk: 'InheritFromJob',
                 reportBuildPolicy: 'ALWAYS',
-                report: 'Otus-Python-QA-Final-Project-Ticketland.ru/allure-report',
-                results: [[path: 'Otus-Python-QA-Final-Project-Ticketland.ru/allure-results']]])
+                report: 'taget/allure-report',
+                results: [[path: 'target/allure-results']]])
             }
         }
     }

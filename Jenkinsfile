@@ -11,7 +11,7 @@ pipeline {
             steps {sh 'pip3 install -r requirements.txt'}
         }
         stage ('Collecting allure report') {
-            steps {sh 'pytest -v tests/test_login_page.py --alluredir=/usr/local/jenkins/workspace/Otus-Python-QA-Final-Project-Ticketland.ru/target/allure-results'}
+            steps {sh 'pytest -v tests/test_login_page.py --alluredir=/var/jenkins_home/workspace/Otus-Python-QA-Final-Project-Ticketland.ru/target/allure-results'}
         }
     }
 
@@ -22,7 +22,7 @@ pipeline {
                 includeProperties: false,
                 jdk: 'InheritFromJob',
                 reportBuildPolicy: 'ALWAYS',
-                report: 'taget/allure-report',
+                report: 'target/allure-report',
                 results: [[path: 'target/allure-results']]])
             }
         }
